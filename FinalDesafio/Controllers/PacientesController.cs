@@ -56,7 +56,7 @@ namespace FinalDesafio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome")] Paciente paciente)
         {
-            if (ModelState.IsValid)
+            if (ModelState != null)
             {
                 _context.Add(paciente);
                 await _context.SaveChangesAsync();
@@ -93,8 +93,9 @@ namespace FinalDesafio.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState!=null)
             {
+                
                 try
                 {
                     _context.Update(paciente);

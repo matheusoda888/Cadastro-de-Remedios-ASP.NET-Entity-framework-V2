@@ -102,7 +102,7 @@ namespace FinalDesafio.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState!=null)
             {
                 try
                 {
