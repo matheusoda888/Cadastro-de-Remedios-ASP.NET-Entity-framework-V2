@@ -85,8 +85,8 @@ namespace FFF.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Id", horario.IdPaciente);
-            ViewData["IdRemedio"] = new SelectList(_context.Remedios, "Id", "Id", horario.IdRemedio);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nome", horario.IdPaciente);
+            ViewData["IdRemedio"] = new SelectList(_context.Remedios, "Id", "Nome", horario.IdRemedio);
             return View(horario);
         }
 
@@ -102,7 +102,7 @@ namespace FFF.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState!=null)
             {
                 try
                 {
